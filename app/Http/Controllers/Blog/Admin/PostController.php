@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Blog\Admin;
 use App\Http\Requests\BlogPostUpdateRequest;
 
 use App\Repositories\BlogCategoryRepository;
-use App\Repositories\BlogPostsRepository;
+use App\Repositories\BlogPostRepository;
 use Carbon\Carbon;
 
 class PostController extends BaseController
@@ -17,7 +17,7 @@ class PostController extends BaseController
     public function __construct()
     {
         parent::__construct();
-        $this->blogPostRepository = app(BlogPostsRepository::class);
+        $this->blogPostRepository = app(BlogPostRepository::class);
         $this->blogCategoryRepository = app(BlogCategoryRepository::class);
     }
 
@@ -99,13 +99,6 @@ class PostController extends BaseController
         }
 
         $data = $request->all();
-
-        if (empty($data['slug'])) {
-            $data['slug'] = \Str::slug($data['slug']);
-        }
-        if (empty($item->published_at) && $data['is_published']) {
-            $data['published_at'] = Carbon::now();
-        }
 
         $result = $item->update($data);
 

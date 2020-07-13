@@ -5,7 +5,7 @@ namespace App\Repositories;
 
 use App\Models\BlogPost as Model;
 
-class BlogPostsRepository extends CoreRepository
+class BlogPostRepository extends CoreRepository
 {
 
     public function getModelClass()
