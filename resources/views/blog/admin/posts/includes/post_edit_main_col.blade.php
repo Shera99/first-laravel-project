@@ -40,8 +40,8 @@
                             <input type="text" name="slug" value="{{ old('slug', $item->slug) }}" id="slug" class="form-control">
                         </div>
                         <div class="form-group">
-                            <label for="parent_id">Категории</label>
-                            <select name="parent_id" id="parent_id" placeholder="Выберите категорию" class="form-control" required>
+                            <label for="category_id">Категории</label>
+                            <select name="category_id" id="category_id" placeholder="Выберите категорию" class="form-control" required>
                                 @foreach($categoryList as $categoryOption)
                                     <option value="{{ $categoryOption->id }}" @if($categoryOption->id == $item->parent_id) selected @endif>
                                         {{ $categoryOption->id_title }}

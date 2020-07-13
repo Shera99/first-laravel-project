@@ -35,8 +35,8 @@
                         <input type="text" class="form-control" value="{{ $item->updated_at }}" disabled>
                     </div>
                     <div class="form-group">
-                        <label for="title">Удалено</label>
-                        <input type="text" class="form-control" value="{{ $item->deleted_at }}" disabled>
+                        <label for="title">Опубликовано</label>
+                        <input type="text" class="form-control" value="{{ $item->published_at }}" disabled>
                     </div>
                 </div>
             </div>
