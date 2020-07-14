@@ -19,7 +19,7 @@ class BlogPostObserver
     }
 
     /**
-     * Обработка ПЕРЕД изменением
+     * Обработка ПЕРЕД изменением записи
      *
      * @param \App\Models\BlogPost $blogPost
      */
@@ -61,7 +61,7 @@ class BlogPostObserver
     }
 
     /**
-     * Обработка ПЕРЕД после записи
+     * Обработка ПОСЛЕ изменения записи
      *
      * @param  \App\Models\BlogPost  $blogPost
      * @return void
