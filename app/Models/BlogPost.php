@@ -16,6 +16,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property string                     $slug
  * @property string                     $excerpt
  * @property string                     $content_raw
+ * @property string                     $content_html
  * @property string                     is_published
  * @property string                     published_at
  */
@@ -34,6 +35,8 @@ class BlogPost extends Model
         'published_at',
         'user_id',
     ];
+
+    const UNCNOWN_USER = 1;
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
