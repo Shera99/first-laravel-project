@@ -63,14 +63,14 @@ class BlogPostObserver
         }
     }
 
-    public function setHtml(BlogPost $blogPost)
+    protected function setHtml(BlogPost $blogPost)
     {
-        if ($blogPost->isDirty($blogPost->content_raw)) {
-            $blogPost->content_html = $blogPost->content_raw;
+        if ($blogPost->isDirty('content_raw')) {
+            $blogPost['content_html'] = $blogPost->content_raw;
         }
     }
 
-    public function setUser(BlogPost $blogPost)
+    protected function setUser(BlogPost $blogPost)
     {
         $blogPost->user_id = auth()->id ?? BlogPost::UNCNOWN_USER;
     }

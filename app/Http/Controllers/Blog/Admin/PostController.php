@@ -56,7 +56,6 @@ class PostController extends BaseController
     {
         $data = $request->input();
         $item = (new BlogPost())->create($data);
-
         if ($item) {
             return redirect()->route('blog.admin.posts.edit', [$item->id])
                 ->with(['success' => "Успешно сохранено."]);
