@@ -66,7 +66,7 @@ class BlogCategory extends Model
      *
      * @param $incomingValue
      */
-    public function getTitleAttribute($incomingValue)
+    public function setTitleAttribute($incomingValue)
     {
         $this->attributes['title'] = mb_strtolower($incomingValue);
     }
