@@ -36,7 +36,8 @@ class BlogCategory extends Model
      */
     public function getParentTitleAttribute()
     {
-        return $title = $this->parentCategory()->title ?? ($this->isRoot() ? 'Корень' : '???');
+        $title = $this->parentCategory()->title ?? ($this->isRoot() ? 'Корень' : '???');
+        return $title;
     }
 
     /**
@@ -47,5 +48,26 @@ class BlogCategory extends Model
     protected function isRoot()
     {
         return $this->id === BlogCategory::ROOT;
+    }
+
+    /**
+     * Пример Аксесуара
+     *
+     * @param $valuFromObject
+     * @return bool|false|string|string[]|null
+     */
+    public function getTitleAttribute($valuFromObject)
+    {
+        return mb_strtoupper($valuFromObject);
+    }
+
+    /**
+     * Пример Мутатора
+     *
+     * @param $incomingValue
+     */
+    public function getTitleAttribute($incomingValue)
+    {
+        $this->attributes['title'] = mb_strtolower($incomingValue);
     }
 }
