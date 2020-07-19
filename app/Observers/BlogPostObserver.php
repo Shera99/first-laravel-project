@@ -97,8 +97,13 @@ class BlogPostObserver
         //
     }
 
+    public function deleting(BlogPost $blogPost)
+    {
+        return $blogPost->getAttribute('id') == $blogPost->getOriginal('id');
+    }
+
     /**
-     * Обработка ПЕРЕД удалением записи (добавляет в запись дату удаления но не удаляет из базы)
+     * Обработка ПОСЛЕ удалением записи (добавляет в запись дату удаления но не удаляет из базы)
      *
      * @param  \App\Models\BlogPost  $blogPost
      * @return void
