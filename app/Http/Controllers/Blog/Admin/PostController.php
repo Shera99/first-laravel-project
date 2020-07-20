@@ -144,7 +144,7 @@ class PostController extends BaseController
         if ($result) {
             return redirect()
                 ->route('blog.admin.posts.index')
-                ->with(['msg' => "Запись id[$id] удлена"]);
+                ->with(['success' => "Запись id[$id] удлена"]);
         } else {
             return back()->withErrors(['msg' => 'Ошибка удаления!!!']);
         }
