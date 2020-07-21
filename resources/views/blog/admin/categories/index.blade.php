@@ -25,7 +25,7 @@
                                     <td>
                                         <a href="{{ route('blog.admin.categories.edit', $item->id) }}">{{ $item->title }}</a>
                                     </td>
-                                    <td @if (in_array($item->parent_id,  [0, 1])) style="color: #1b4b72" @endif>
+                                    <td @if (in_array($item->parent_id,  [0, 1])) style="color: red" @endif>
                                     {{--{{ $item->parent_title }}--}}
                                         {{ $item->parentTitle }}
                                     </td>

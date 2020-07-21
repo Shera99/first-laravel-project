@@ -30,7 +30,7 @@ class CategoryController extends BaseController
 
     public function create()
     {
-        $item = new BlogCategory();
+        $item = BlogCategory::make();
         $categoryList = $this->blocCategoryRepository->getForComboBox();
 
         return view('blog.admin.categories.edit', compact('item', 'categoryList'));
@@ -41,7 +41,7 @@ class CategoryController extends BaseController
     {
         $data = $request->input();
 
-        $item = new BlogCategory($data); // Создаст объект но не добавит в БД
+        $item = BlogCategory::create($data); // Создаст объект но не добавит в БД
         $item->save();
         if ($item) {
             return redirect()->route('blog.admin.categories.edit', [$item->id])
