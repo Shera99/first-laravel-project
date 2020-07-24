@@ -25,6 +25,8 @@ class BlogPost extends Model
 {
     use SoftDeletes;
 
+    protected $table = 'blog_posts';
+
     protected $fillable = [
         'title',
         'slug',

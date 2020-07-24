@@ -13,7 +13,7 @@ class BlogPostRepository extends CoreRepository
         return Model::class;
     }
 
-    public function getAllWithPaginate()
+    public function getAllWithPaginate(int $page)
     {
         $columns = [
             'id',
@@ -36,7 +36,7 @@ class BlogPostRepository extends CoreRepository
                 //и так
                 'user:id,name',
             ])
-            ->paginate(25);
+            ->paginate($page);
         return $result;
     }
 

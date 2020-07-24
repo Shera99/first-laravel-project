@@ -28,16 +28,15 @@ class BlogPostObserver
      */
     public function updating(BlogPost $blogPost)
     {
-        /*$test[] = $blogPost->isDirty();
+        $this->setPublishedAt($blogPost);
+        $this->setSlug($blogPost);
+    }
+
+    /*$test[] = $blogPost->isDirty();
         $test[] = $blogPost->isDirty('is_published');
         $test[] = $blogPost->getAttribute('is_published');
         $test[] = $blogPost->is_published;
         $test[] = $blogPost->getOriginal('is_published');*/
-
-        $this->setPublishedAt($blogPost);
-
-        $this->setSlug($blogPost);
-    }
 
     /**
      * Если дата публикации пустая и стоит флаг для публикации то заполняем его датой

@@ -34,4 +34,8 @@ return [
         'secret' => env('SPARKPOST_SECRET'),
     ],
 
+    'api' => [
+        'token' => 'asd2343asdasaYdnnas89932asdasd',
+    ],
+
 ];
